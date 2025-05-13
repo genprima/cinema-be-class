@@ -8,16 +8,16 @@ import jakarta.persistence.Table;
 @Table(name = "movie")
 public class Movie extends AbstractBaseEntity {
 
-    @Column(name = "title")
+    @Column(name = "title", nullable = false)
     private String title;
 
     @Column(name = "description")
     private String description;
 
-    @Column(name = "duration")
+    @Column(name = "duration", nullable = false)
     private Integer duration;
 
-    @Column(name = "rating")
+    @Column(name = "rating", nullable = false)
     private Double rating;
     
     public String getTitle() {

@@ -8,13 +8,13 @@ import jakarta.persistence.Table;
 @Table(name = "studio_layout")
 public class StudioLayout extends AbstractBaseEntity {
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "max_rows")
+    @Column(name = "max_rows", nullable = false)
     private Integer maxRows;
 
-    @Column(name = "max_columns")
+    @Column(name = "max_columns", nullable = false)
     private Integer maxColumns;
 
     public String getName() {

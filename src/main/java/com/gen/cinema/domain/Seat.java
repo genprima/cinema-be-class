@@ -14,17 +14,17 @@ import jakarta.persistence.Table;
 @Table(name = "seat")
 public class Seat extends AbstractBaseEntity {
 
-    @Column(name = "row")
+    @Column(name = "row", nullable = false)
     private String row;
 
-    @Column(name = "number")
+    @Column(name = "number", nullable = false)
     private Integer number;
 
-    @Column(columnDefinition = "varchar(255)")
+    @Column(columnDefinition = "varchar(255)", nullable = false)
     @Enumerated(EnumType.STRING)
     private SeatType seatType;
 
-    @Column(name = "additional_price")
+    @Column(name = "additional_price", nullable = false )
     private BigDecimal additionalPrice;
 
     public String getRow() {

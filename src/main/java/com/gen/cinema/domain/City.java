@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 @Table(name = "city")
 public class City extends AbstractBaseEntity {
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
     public String getName() {

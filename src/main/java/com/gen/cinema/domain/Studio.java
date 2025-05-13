@@ -10,15 +10,15 @@ import jakarta.persistence.Table;
 @Table(name = "studio")
 public class Studio extends AbstractBaseEntity {
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "city_cinema_id")
+    @JoinColumn(name = "city_cinema_id", nullable = false)
     private CityCinema cityCinema;
 
     @ManyToOne
-    @JoinColumn(name = "studio_layout_id")
+    @JoinColumn(name = "studio_layout_id", nullable = false)
     private StudioLayout studioLayout;
 
     public String getName() {

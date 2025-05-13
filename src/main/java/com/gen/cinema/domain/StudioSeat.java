@@ -18,10 +18,10 @@ public class StudioSeat extends AbstractBaseEntity {
     @JoinColumn(name = "seat_id", nullable = false)
     private Seat seat;
 
-    @Column(name = "x_coordinate")
+    @Column(name = "x_coordinate", nullable = false)
     private Integer xCoordinate;
 
-    @Column(name = "y_coordinate")
+    @Column(name = "y_coordinate", nullable = false)
     private Integer yCoordinate;
 
     public Studio getStudio() {
