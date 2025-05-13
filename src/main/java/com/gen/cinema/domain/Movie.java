@@ -16,9 +16,6 @@ public class Movie extends AbstractBaseEntity {
 
     @Column(name = "duration", nullable = false)
     private Integer duration;
-
-    @Column(name = "rating", nullable = false)
-    private Double rating;
     
     public String getTitle() {
         return title;
@@ -42,14 +39,6 @@ public class Movie extends AbstractBaseEntity {
 
     public void setDuration(Integer duration) {
         this.duration = duration;
-    }
-
-    public Double getRating() {
-        return rating;
-    }
-
-    public void setRating(Double rating) {
-        this.rating = rating;
     }
     
 }
