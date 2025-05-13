@@ -1,5 +1,6 @@
 package com.gen.cinema.domain;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
@@ -27,7 +28,7 @@ public class MovieSchedule extends AbstractBaseEntity {
     private LocalDateTime endTime;
 
     @Column(name = "price", nullable = false)
-    private Double price;
+    private BigDecimal price;
 
     public Movie getMovie() {
         return movie;
@@ -61,11 +62,11 @@ public class MovieSchedule extends AbstractBaseEntity {
         this.endTime = endTime;
     }
 
-    public Double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 } 

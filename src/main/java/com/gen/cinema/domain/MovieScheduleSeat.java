@@ -25,10 +25,10 @@ public class MovieScheduleSeat extends AbstractBaseUUIDEntity {
     private Integer number;
 
     @Column(name = "x_coordinate", nullable = false)
-    private Double xCoordinate;
+    private Integer xCoordinate;
 
     @Column(name = "y_coordinate", nullable = false)
-    private Double yCoordinate;
+    private Integer yCoordinate;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
@@ -61,19 +61,19 @@ public class MovieScheduleSeat extends AbstractBaseUUIDEntity {
         this.number = number;
     }
 
-    public Double getXCoordinate() {
+    public Integer getXCoordinate() {
         return xCoordinate;
     }
 
-    public void setXCoordinate(Double xCoordinate) {
+    public void setXCoordinate(Integer xCoordinate) {
         this.xCoordinate = xCoordinate;
     }
 
-    public Double getYCoordinate() {
+    public Integer getYCoordinate() {
         return yCoordinate;
     }
 
-    public void setYCoordinate(Double yCoordinate) {
+    public void setYCoordinate(Integer yCoordinate) {
         this.yCoordinate = yCoordinate;
     }
 

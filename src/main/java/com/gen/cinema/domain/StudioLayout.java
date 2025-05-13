@@ -12,10 +12,10 @@ public class StudioLayout extends AbstractBaseEntity {
     private String name;
 
     @Column(name = "max_rows")
-    private String maxRows;
+    private Integer maxRows;
 
     @Column(name = "max_columns")
-    private String maxColumns;
+    private Integer maxColumns;
 
     public String getName() {
         return name;
@@ -25,19 +25,19 @@ public class StudioLayout extends AbstractBaseEntity {
         this.name = name;
     }
 
-    public String getMaxRows() {
+    public Integer getMaxRows() {
         return maxRows;
     }
 
-    public void setMaxRows(String maxRows) {
+    public void setMaxRows(Integer maxRows) {
         this.maxRows = maxRows;
     }
 
-    public String getMaxColumns() {
+    public Integer getMaxColumns() {
         return maxColumns;
     }
 
-    public void setMaxColumns(String maxColumns) {
+    public void setMaxColumns(Integer maxColumns) {
         this.maxColumns = maxColumns;
     }
     

@@ -19,10 +19,10 @@ public class StudioSeat extends AbstractBaseEntity {
     private Seat seat;
 
     @Column(name = "x_coordinate")
-    private Double xCoordinate;
+    private Integer xCoordinate;
 
     @Column(name = "y_coordinate")
-    private Double yCoordinate;
+    private Integer yCoordinate;
 
     public Studio getStudio() {
         return studio;
@@ -40,19 +40,19 @@ public class StudioSeat extends AbstractBaseEntity {
         this.seat = seat;
     }
 
-    public Double getXCoordinate() {
+    public Integer getXCoordinate() {
         return xCoordinate;
     }
 
-    public void setXCoordinate(Double xCoordinate) {
+    public void setXCoordinate(Integer xCoordinate) {
         this.xCoordinate = xCoordinate;
     }
 
-    public Double getYCoordinate() {
+    public Integer getYCoordinate() {
         return yCoordinate;
     }
 
-    public void setYCoordinate(Double yCoordinate) {
+    public void setYCoordinate(Integer yCoordinate) {
         this.yCoordinate = yCoordinate;
     }
 } 
