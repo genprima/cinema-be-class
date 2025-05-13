@@ -24,9 +24,6 @@ public class MovieSchedule extends AbstractBaseEntity {
     @Column(name = "start_time", nullable = false)
     private LocalDateTime startTime;
 
-    @Column(name = "end_time", nullable = false)
-    private LocalDateTime endTime;
-
     @Column(name = "price", nullable = false)
     private BigDecimal price;
 
@@ -53,15 +50,7 @@ public class MovieSchedule extends AbstractBaseEntity {
     public void setStartTime(LocalDateTime startTime) {
         this.startTime = startTime;
     }
-
-    public LocalDateTime getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(LocalDateTime endTime) {
-        this.endTime = endTime;
-    }
-
+    
     public BigDecimal getPrice() {
         return price;
     }
