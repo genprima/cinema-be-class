@@ -1,6 +1,6 @@
 package com.gen.cinema.enums;
 
 public enum SeatType {
-   REEGULAR,
+   REGULAR,
    COMFORT
 }

@@ -8,7 +8,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User extends AbstractBaseUUIDEntity {
 
     @Column(name = "username", nullable = false, unique = true)

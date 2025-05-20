@@ -22,12 +22,17 @@ spring:
   flyway:
     enabled: true
     baseline-on-migrate: true
-    locations: classpath:db/migration
+    baseline-version: 0
+    baseline-description: "Initial baseline"
+    locations: classpath:db/migration,classpath:db/rollback
     schemas: public
     table: flyway_schema_history
     validate-on-migrate: true
     clean-disabled: false
-    baseline-version: 0
+    group: true
+    mixed: true
+    repeatable-sql-migration-prefix: R__
+    out-of-order: false
 
 logging:
   level:

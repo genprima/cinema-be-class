@@ -25,7 +25,7 @@ public class Seat extends AbstractBaseEntity {
     private SeatType seatType;
 
     @Column(name = "additional_price", nullable = false )
-    private BigDecimal additionalPrice;
+    private BigDecimal additionalPrice = BigDecimal.ZERO;
 
     public String getRow() {
         return row;
