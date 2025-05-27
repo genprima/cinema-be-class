@@ -2,8 +2,12 @@ package com.gen.cinema.domain;
 
 import java.util.Set;
 
+import com.gen.cinema.enums.UserRole;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -16,6 +20,10 @@ public class User extends AbstractBaseUUIDEntity {
 
     @Column(name = "password", nullable = false)
     private String password;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role", nullable = false)
+    private UserRole role;
 
     @Column(name = "address")
     private String address;
@@ -37,6 +45,14 @@ public class User extends AbstractBaseUUIDEntity {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public UserRole getRole() {
+        return role;
+    }
+
+    public void setRole(UserRole role) {
+        this.role = role;
     }
 
     public String getAddress() {

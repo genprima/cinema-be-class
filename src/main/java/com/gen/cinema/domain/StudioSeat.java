@@ -18,6 +18,12 @@ public class StudioSeat extends AbstractBaseEntity {
     @JoinColumn(name = "seat_id", nullable = false)
     private Seat seat;
 
+    @Column(name = "row", nullable = false)
+    private String row;
+
+    @Column(name = "number", nullable = false)
+    private Integer number;
+
     @Column(name = "x_coordinate", nullable = false)
     private Integer xCoordinate;
 
@@ -38,6 +44,22 @@ public class StudioSeat extends AbstractBaseEntity {
 
     public void setSeat(Seat seat) {
         this.seat = seat;
+    }
+
+    public String getRow() {
+        return row;
+    }
+
+    public void setRow(String row) {
+        this.row = row;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
     }
 
     public Integer getXCoordinate() {

@@ -1,7 +1,10 @@
 package com.gen.cinema.domain;
 
+import java.util.Set;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -14,6 +17,9 @@ public class Cinema extends AbstractBaseEntity {
     @Column(name = "address")
     private String address;
 
+    @OneToMany(mappedBy = "cinema")
+    private Set<CityCinema> cityCinemas;
+
     public String getName() {
         return name;
     }
@@ -25,6 +31,16 @@ public class Cinema extends AbstractBaseEntity {
     public String getAddress() {
         return address;
     }
-    
-    
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Set<CityCinema> getCityCinemas() {
+        return cityCinemas;
+    }
+
+    public void setCityCinemas(Set<CityCinema> cityCinemas) {
+        this.cityCinemas = cityCinemas;
+    }
 }

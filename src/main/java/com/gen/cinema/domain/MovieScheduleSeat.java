@@ -1,5 +1,7 @@
 package com.gen.cinema.domain;
 
+import java.math.BigDecimal;
+
 import com.gen.cinema.enums.SeatStatus;
 
 import jakarta.persistence.Column;
@@ -18,24 +20,16 @@ public class MovieScheduleSeat extends AbstractBaseUUIDEntity {
     @JoinColumn(name = "movie_schedule_id", nullable = false)
     private MovieSchedule movieSchedule;
 
-    @Column(name = "row", nullable = false)
-    private String row;
-
-    @Column(name = "number", nullable = false)
-    private Integer number;
-
-    @Column(name = "x_coordinate", nullable = false)
-    private Integer xCoordinate;
-
-    @Column(name = "y_coordinate", nullable = false)
-    private Integer yCoordinate;
+    @ManyToOne
+    @JoinColumn(name = "studio_seat_id", nullable = false)
+    private StudioSeat studioSeat;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
     private SeatStatus status = SeatStatus.AVAILABLE;
 
     @Column(name = "price_adjustment")
-    private Double priceAdjustment;
+    private BigDecimal priceAdjustment;
 
     public MovieSchedule getMovieSchedule() {
         return movieSchedule;
@@ -45,36 +39,12 @@ public class MovieScheduleSeat extends AbstractBaseUUIDEntity {
         this.movieSchedule = movieSchedule;
     }
 
-    public String getRow() {
-        return row;
+    public StudioSeat getStudioSeat() {
+        return studioSeat;
     }
 
-    public void setRow(String row) {
-        this.row = row;
-    }
-
-    public Integer getNumber() {
-        return number;
-    }
-
-    public void setNumber(Integer number) {
-        this.number = number;
-    }
-
-    public Integer getXCoordinate() {
-        return xCoordinate;
-    }
-
-    public void setXCoordinate(Integer xCoordinate) {
-        this.xCoordinate = xCoordinate;
-    }
-
-    public Integer getYCoordinate() {
-        return yCoordinate;
-    }
-
-    public void setYCoordinate(Integer yCoordinate) {
-        this.yCoordinate = yCoordinate;
+    public void setStudioSeat(StudioSeat studioSeat) {
+        this.studioSeat = studioSeat;
     }
 
     public SeatStatus getStatus() {
@@ -85,11 +55,11 @@ public class MovieScheduleSeat extends AbstractBaseUUIDEntity {
         this.status = status;
     }
 
-    public Double getPriceAdjustment() {
+    public BigDecimal getPriceAdjustment() {
         return priceAdjustment;
     }
 
-    public void setPriceAdjustment(Double priceAdjustment) {
+    public void setPriceAdjustment(BigDecimal priceAdjustment) {
         this.priceAdjustment = priceAdjustment;
     }
 } 

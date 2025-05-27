@@ -14,32 +14,26 @@ import jakarta.persistence.Table;
 @Table(name = "seat")
 public class Seat extends AbstractBaseEntity {
 
-    @Column(name = "row", nullable = false)
-    private String row;
-
-    @Column(name = "number", nullable = false)
-    private Integer number;
-
-    @Column(columnDefinition = "varchar(255)", nullable = false)
+    @Column(name = "seat_type", columnDefinition = "varchar(255)", nullable = false)
     @Enumerated(EnumType.STRING)
     private SeatType seatType;
 
-    @Column(name = "additional_price", nullable = false )
+    @Column(name = "additional_price", nullable = false)
     private BigDecimal additionalPrice = BigDecimal.ZERO;
 
-    public String getRow() {
-        return row;
+    public SeatType getSeatType() {
+        return seatType;
     }
 
-    public void setRow(String row) {
-        this.row = row;
+    public void setSeatType(SeatType seatType) {
+        this.seatType = seatType;
     }
 
-    public Integer getNumber() {
-        return number;
+    public BigDecimal getAdditionalPrice() {
+        return additionalPrice;
     }
 
-    public void setNumber(Integer number) {
-        this.number = number;
+    public void setAdditionalPrice(BigDecimal additionalPrice) {
+        this.additionalPrice = additionalPrice;
     }   
 }

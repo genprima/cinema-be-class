@@ -1,9 +1,12 @@
 package com.gen.cinema.domain;
 
+import java.util.Set;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -20,6 +23,9 @@ public class Studio extends AbstractBaseEntity {
     @ManyToOne
     @JoinColumn(name = "studio_layout_id", nullable = false)
     private StudioLayout studioLayout;
+
+    @OneToMany(mappedBy = "studio")
+    private Set<MovieSchedule> movieSchedules;
 
     public String getName() {
         return name;
@@ -43,5 +49,13 @@ public class Studio extends AbstractBaseEntity {
 
     public void setStudioLayout(StudioLayout studioLayout) {
         this.studioLayout = studioLayout;
+    }
+
+    public Set<MovieSchedule> getMovieSchedules() {
+        return movieSchedules;
+    }
+
+    public void setMovieSchedules(Set<MovieSchedule> movieSchedules) {
+        this.movieSchedules = movieSchedules;
     }
 }

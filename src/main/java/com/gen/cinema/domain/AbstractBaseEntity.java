@@ -116,4 +116,8 @@ public abstract class AbstractBaseEntity implements Auditable, Serializable {
     public void setUpdatedBy(String updatedBy) {
         setModifiedBy(updatedBy);
     }
+
+    public Long getId() {
+        return id;
+    }
 }

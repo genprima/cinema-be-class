@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "movie_schedule")
-public class MovieSchedule extends AbstractBaseEntity {
+public class MovieSchedule extends AbstractBaseUUIDEntity {
 
     @ManyToOne
     @JoinColumn(name = "movie_id", nullable = false)
